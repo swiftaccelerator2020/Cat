@@ -8,7 +8,12 @@
 import Foundation
 import UIKit
 
-extension ViewController {
+extension HomeViewController {
+    func setUp() {
+        setUpHeaderLabel()
+        setUpNextButton()
+    }
+    
     func setUpHeaderLabel() {
         let headerAttributedString = NSMutableAttributedString(string: "Me = 😺\nYou = 😺\nEveryone = 😺",
                                                                attributes: [.font : UIFont.boldSystemFont(ofSize: 40),
