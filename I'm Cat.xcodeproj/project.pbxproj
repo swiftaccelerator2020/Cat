@@ -14,6 +14,7 @@
 		324A89F52553D0DD0001F8A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 324A89F42553D0DD0001F8A2 /* Assets.xcassets */; };
 		324A89F82553D0DD0001F8A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 324A89F62553D0DD0001F8A2 /* LaunchScreen.storyboard */; };
 		324A8A012553D64B0001F8A2 /* CustomColor+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324A8A002553D64B0001F8A2 /* CustomColor+UIColor.swift */; };
+		324A8A0525552A120001F8A2 /* SetUp+HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324A8A0425552A120001F8A2 /* SetUp+HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		324A89F72553D0DD0001F8A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		324A89F92553D0DD0001F8A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		324A8A002553D64B0001F8A2 /* CustomColor+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomColor+UIColor.swift"; sourceTree = "<group>"; };
+		324A8A0425552A120001F8A2 /* SetUp+HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SetUp+HomeViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,14 +62,23 @@
 			children = (
 				324A89EB2553D0D90001F8A2 /* AppDelegate.swift */,
 				324A89ED2553D0D90001F8A2 /* SceneDelegate.swift */,
-				324A89EF2553D0D90001F8A2 /* ViewController.swift */,
 				324A8A002553D64B0001F8A2 /* CustomColor+UIColor.swift */,
+				324A8A03255529F60001F8A2 /* Home View Controller */,
 				324A89F12553D0D90001F8A2 /* Main.storyboard */,
 				324A89F42553D0DD0001F8A2 /* Assets.xcassets */,
 				324A89F62553D0DD0001F8A2 /* LaunchScreen.storyboard */,
 				324A89F92553D0DD0001F8A2 /* Info.plist */,
 			);
 			path = "I'm Cat";
+			sourceTree = "<group>";
+		};
+		324A8A03255529F60001F8A2 /* Home View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				324A89EF2553D0D90001F8A2 /* ViewController.swift */,
+				324A8A0425552A120001F8A2 /* SetUp+HomeViewController.swift */,
+			);
+			path = "Home View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				324A89F02553D0D90001F8A2 /* ViewController.swift in Sources */,
+				324A8A0525552A120001F8A2 /* SetUp+HomeViewController.swift in Sources */,
 				324A89EC2553D0D90001F8A2 /* AppDelegate.swift in Sources */,
 				324A8A012553D64B0001F8A2 /* CustomColor+UIColor.swift in Sources */,
 				324A89EE2553D0D90001F8A2 /* SceneDelegate.swift in Sources */,

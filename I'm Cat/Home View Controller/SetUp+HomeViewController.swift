@@ -1,24 +1,14 @@
 //
-//  ViewController.swift
+//  SetUp+HomeViewController.swift
 //  I'm Cat
 //
-//  Created by JiaChen(: on 5/11/20.
+//  Created by JiaChen(: on 6/11/20.
 //
 
+import Foundation
 import UIKit
 
-class ViewController: UIViewController {
-
-    @IBOutlet weak var headerLabel: UILabel!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-        setUpHeaderLabel()
-        
-    }
-    
+extension ViewController {
     func setUpHeaderLabel() {
         let headerAttributedString = NSMutableAttributedString(string: "Me = 😺\nYou = 😺\nEveryone = 😺",
                                                                attributes: [.font : UIFont.boldSystemFont(ofSize: 40),
@@ -35,6 +25,7 @@ class ViewController: UIViewController {
         headerLabel.attributedText = headerAttributedString
     }
 
-
+    func setUpNextButton() {
+        nextButton.layer.cornerRadius = 49 / 2
+    }
 }
-

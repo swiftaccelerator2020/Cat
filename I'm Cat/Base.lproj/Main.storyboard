@@ -65,6 +65,7 @@ Why else do you think humans keep wearing masks? A pandemic? No, it’s to hide 
                     </view>
                     <connections>
                         <outlet property="headerLabel" destination="cbM-Vu-WRb" id="d6E-Bt-W0U"/>
+                        <outlet property="nextButton" destination="UY3-zv-XMh" id="OEd-rd-m5x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
