@@ -34,6 +34,9 @@ Everyone = 😺</string>
                                 </constraints>
                                 <color key="tintColor" systemColor="systemBackgroundColor"/>
                                 <state key="normal" title="Peek behind the Mask"/>
+                                <connections>
+                                    <action selector="openCat:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qGk-t2-TiK"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IpY-ve-OHQ">
                                 <rect key="frame" x="16" y="259.5" width="382" height="513.5"/>
@@ -66,17 +69,48 @@ Why else do you think humans keep wearing masks? A pandemic? No, it’s to hide 
                     <connections>
                         <outlet property="headerLabel" destination="cbM-Vu-WRb" id="d6E-Bt-W0U"/>
                         <outlet property="nextButton" destination="UY3-zv-XMh" id="OEd-rd-m5x"/>
+                        <segue destination="Sbl-gj-kgZ" kind="presentation" identifier="showcats" modalPresentationStyle="fullScreen" id="y05-ig-9bS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="79.710144927536234" y="93.75"/>
         </scene>
+        <!--Cats View Controller-->
+        <scene sceneID="c1W-vy-egB">
+            <objects>
+                <viewController id="Sbl-gj-kgZ" customClass="CatsViewController" customModule="I_m_Cat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xls-F7-nDM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S9p-d8-xzV">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="f0o-F1-Hmg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="S9p-d8-xzV" firstAttribute="trailing" secondItem="f0o-F1-Hmg" secondAttribute="trailing" id="Ct4-4q-CKM"/>
+                            <constraint firstItem="S9p-d8-xzV" firstAttribute="leading" secondItem="f0o-F1-Hmg" secondAttribute="leading" id="Ou9-FS-OIj"/>
+                            <constraint firstAttribute="bottom" secondItem="S9p-d8-xzV" secondAttribute="bottom" id="eiG-mu-AQs"/>
+                            <constraint firstItem="S9p-d8-xzV" firstAttribute="top" secondItem="Xls-F7-nDM" secondAttribute="top" id="lhw-D9-Hn1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="previewView" destination="S9p-d8-xzV" id="Rfo-hT-gMQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RCN-M6-wWV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="786.95652173913049" y="93.75"/>
+        </scene>
     </scenes>
     <color key="tintColor" name="AccentColor"/>
     <resources>
         <namedColor name="AccentColor">
-            <color red="1" green="0.72549019607843135" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.72500002384185791" blue="0.19599999487400055" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

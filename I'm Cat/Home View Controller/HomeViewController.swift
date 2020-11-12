@@ -18,5 +18,9 @@ class HomeViewController: UIViewController {
         
         setUp()
     }
+    
+    @IBAction func openCat(_ sender: Any) {
+        performSegue(withIdentifier: "showcats", sender: nil)
+    }
 }
 
