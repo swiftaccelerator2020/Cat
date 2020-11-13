@@ -16,6 +16,9 @@
 		324A8A012553D64B0001F8A2 /* CustomColor+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324A8A002553D64B0001F8A2 /* CustomColor+UIColor.swift */; };
 		324A8A0525552A120001F8A2 /* SetUp+HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324A8A0425552A120001F8A2 /* SetUp+HomeViewController.swift */; };
 		3261AB3A255C381C007DBC59 /* CatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3261AB39255C381C007DBC59 /* CatsViewController.swift */; };
+		3261AB47255CF4FF007DBC59 /* FaceDetection+Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3261AB46255CF4FF007DBC59 /* FaceDetection+Cat.swift */; };
+		3261AB4A255CF64F007DBC59 /* UIImage+Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3261AB49255CF64F007DBC59 /* UIImage+Orientation.swift */; };
+		32DCDC22255E694C00E542C2 /* Reactions.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 32DCDC21255E694C00E542C2 /* Reactions.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		324A8A002553D64B0001F8A2 /* CustomColor+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomColor+UIColor.swift"; sourceTree = "<group>"; };
 		324A8A0425552A120001F8A2 /* SetUp+HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SetUp+HomeViewController.swift"; sourceTree = "<group>"; };
 		3261AB39255C381C007DBC59 /* CatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsViewController.swift; sourceTree = "<group>"; };
+		3261AB46255CF4FF007DBC59 /* FaceDetection+Cat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FaceDetection+Cat.swift"; sourceTree = "<group>"; };
+		3261AB49255CF64F007DBC59 /* UIImage+Orientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Orientation.swift"; sourceTree = "<group>"; };
+		32DCDC21255E694C00E542C2 /* Reactions.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Reactions.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,11 +71,13 @@
 				324A89EB2553D0D90001F8A2 /* AppDelegate.swift */,
 				324A89ED2553D0D90001F8A2 /* SceneDelegate.swift */,
 				324A8A002553D64B0001F8A2 /* CustomColor+UIColor.swift */,
+				3261AB49255CF64F007DBC59 /* UIImage+Orientation.swift */,
 				3261AB41255CEF46007DBC59 /* Cat View Controller */,
 				324A8A03255529F60001F8A2 /* Home View Controller */,
 				324A89F12553D0D90001F8A2 /* Main.storyboard */,
 				324A89F42553D0DD0001F8A2 /* Assets.xcassets */,
 				324A89F62553D0DD0001F8A2 /* LaunchScreen.storyboard */,
+				32DCDC21255E694C00E542C2 /* Reactions.mlmodel */,
 				324A89F92553D0DD0001F8A2 /* Info.plist */,
 			);
 			path = "I'm Cat";
@@ -88,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				3261AB39255C381C007DBC59 /* CatsViewController.swift */,
+				3261AB46255CF4FF007DBC59 /* FaceDetection+Cat.swift */,
 			);
 			path = "Cat View Controller";
 			sourceTree = "<group>";
@@ -166,8 +175,11 @@
 				324A8A0525552A120001F8A2 /* SetUp+HomeViewController.swift in Sources */,
 				324A89EC2553D0D90001F8A2 /* AppDelegate.swift in Sources */,
 				3261AB3A255C381C007DBC59 /* CatsViewController.swift in Sources */,
+				3261AB4A255CF64F007DBC59 /* UIImage+Orientation.swift in Sources */,
+				3261AB47255CF4FF007DBC59 /* FaceDetection+Cat.swift in Sources */,
 				324A8A012553D64B0001F8A2 /* CustomColor+UIColor.swift in Sources */,
 				324A89EE2553D0D90001F8A2 /* SceneDelegate.swift in Sources */,
+				32DCDC22255E694C00E542C2 /* Reactions.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,7 +333,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "jiachen.I-m-Cat";
+				PRODUCT_BUNDLE_IDENTIFIER = jiachen.cat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -340,7 +352,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "jiachen.I-m-Cat";
+				PRODUCT_BUNDLE_IDENTIFIER = jiachen.cat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
