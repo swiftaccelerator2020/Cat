@@ -18,7 +18,7 @@ extension CatsViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     func setupAVCaptureSession() -> AVCaptureSession? {
         let captureSession = AVCaptureSession()
         do {
-            let inputDevice = try self.configureFrontCamera(for: captureSession)
+            let inputDevice = try self.configureCamera(for: captureSession)
             self.configureVideoDataOutput(for: inputDevice.device, resolution: inputDevice.resolution, captureSession: captureSession)
             self.designatePreviewLayer(for: captureSession)
             return captureSession
@@ -59,11 +59,16 @@ extension CatsViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         return nil
     }
     
-    func configureFrontCamera(for captureSession: AVCaptureSession) throws -> (device: AVCaptureDevice, resolution: CGSize) {
-        let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: .video, position: .front)
+    func configureCamera(for captureSession: AVCaptureSession, position: AVCaptureDevice.Position = .back) throws -> (device: AVCaptureDevice, resolution: CGSize) {
+        let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: .video, position: position)
         
         if let device = deviceDiscoverySession.devices.first {
             if let deviceInput = try? AVCaptureDeviceInput(device: device) {
+                
+                if let input = captureSession.inputs.first {
+                    captureSession.removeInput(input)
+                }
+                
                 if captureSession.canAddInput(deviceInput) {
                     captureSession.addInput(deviceInput)
                 }
@@ -381,7 +386,6 @@ extension CatsViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         }
         
         faceRectangleShapeLayer.path = faceRectanglePath
-//        faceLandmarksShapeLayer.path = faceLandmarksPath
         
         self.updateLayerGeometry()
         

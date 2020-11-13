@@ -29,7 +29,6 @@ class CatsViewController: UIViewController {
     var rootLayer: CALayer?
     var detectionOverlayLayer: CALayer?
     var detectedFaceRectangleShapeLayer: CAShapeLayer?
-    var detectedFaceLandmarksShapeLayer: CAShapeLayer?
     
     // Vision requests
     var detectionRequests: [VNDetectFaceRectanglesRequest]?
@@ -67,6 +66,19 @@ class CatsViewController: UIViewController {
     
     @IBAction func dismissButtonClicked(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func flipCameraButtonClicked(_ sender: Any) {
+        guard let session = session else { return }
+        session.beginConfiguration()
+        let sessionInfo = try! configureCamera(for: session, position: captureDevice?.position == .front ? .back : .front)
+        
+        captureDevice = sessionInfo.device
+        captureDeviceResolution = sessionInfo.resolution
+
+        setupVisionDrawingLayers()
+        
+        session.commitConfiguration()
     }
     
     /*

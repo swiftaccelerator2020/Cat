@@ -88,6 +88,20 @@ Why else do you think humans keep wearing masks? A pandemic? No, it’s to hide 
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88w-V8-aD1">
+                                <rect key="frame" x="344" y="792" width="50" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="T9t-lM-Pb0"/>
+                                    <constraint firstAttribute="height" constant="50" id="UTp-tp-Zs9"/>
+                                </constraints>
+                                <state key="normal" image="arrow.triangle.2.circlepath.camera.fill" catalog="system">
+                                    <color key="titleShadowColor" name="Button Background"/>
+                                </state>
+                                <connections>
+                                    <action selector="flipCameraButtonClicked:" destination="Sbl-gj-kgZ" eventType="touchUpInside" id="aB2-cp-6HJ"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0e-yb-ATv">
                                 <rect key="frame" x="20" y="64" width="60" height="40"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -107,9 +121,11 @@ Why else do you think humans keep wearing masks? A pandemic? No, it’s to hide 
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="O0e-yb-ATv" firstAttribute="top" secondItem="f0o-F1-Hmg" secondAttribute="top" constant="20" id="6im-6b-rvM"/>
+                            <constraint firstItem="f0o-F1-Hmg" firstAttribute="bottom" secondItem="88w-V8-aD1" secondAttribute="bottom" constant="20" id="7Zo-H4-96X"/>
                             <constraint firstItem="O0e-yb-ATv" firstAttribute="leading" secondItem="f0o-F1-Hmg" secondAttribute="leading" constant="20" id="9vS-Ni-5Av"/>
                             <constraint firstItem="S9p-d8-xzV" firstAttribute="trailing" secondItem="f0o-F1-Hmg" secondAttribute="trailing" id="Ct4-4q-CKM"/>
                             <constraint firstItem="S9p-d8-xzV" firstAttribute="leading" secondItem="f0o-F1-Hmg" secondAttribute="leading" id="Ou9-FS-OIj"/>
+                            <constraint firstItem="f0o-F1-Hmg" firstAttribute="trailing" secondItem="88w-V8-aD1" secondAttribute="trailing" constant="20" id="c4j-gw-tdq"/>
                             <constraint firstAttribute="bottom" secondItem="S9p-d8-xzV" secondAttribute="bottom" id="eiG-mu-AQs"/>
                             <constraint firstItem="S9p-d8-xzV" firstAttribute="top" secondItem="Xls-F7-nDM" secondAttribute="top" id="lhw-D9-Hn1"/>
                         </constraints>
@@ -126,6 +142,7 @@ Why else do you think humans keep wearing masks? A pandemic? No, it’s to hide 
     </scenes>
     <color key="tintColor" name="AccentColor"/>
     <resources>
+        <image name="arrow.triangle.2.circlepath.camera.fill" catalog="system" width="128" height="94"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="AccentColor">
             <color red="1" green="0.72500002384185791" blue="0.19599999487400055" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
