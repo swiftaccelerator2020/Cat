@@ -13,6 +13,7 @@ import Vision
 class CatsViewController: UIViewController {
     
     @IBOutlet weak var previewView: UIView!
+    @IBOutlet weak var dismissButton: UIButton!
     
     // AVCapture variables to hold sequence data
     var session: AVCaptureSession?
@@ -45,6 +46,9 @@ class CatsViewController: UIViewController {
         self.prepareVisionRequest()
         
         self.session?.startRunning()
+        
+        dismissButton.layer.cornerRadius = 10
+    
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -59,6 +63,10 @@ class CatsViewController: UIViewController {
 
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    @IBAction func dismissButtonClicked(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
     /*

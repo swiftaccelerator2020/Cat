@@ -88,10 +88,26 @@ Why else do you think humans keep wearing masks? A pandemic? No, it’s to hide 
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0e-yb-ATv">
+                                <rect key="frame" x="20" y="64" width="60" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="45V-a5-SJz"/>
+                                    <constraint firstAttribute="height" constant="40" id="N61-wE-WlJ"/>
+                                </constraints>
+                                <state key="normal" image="xmark" catalog="system">
+                                    <color key="titleShadowColor" name="Button Background"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissButtonClicked:" destination="Sbl-gj-kgZ" eventType="touchUpInside" id="ez1-zo-Leo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="f0o-F1-Hmg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="O0e-yb-ATv" firstAttribute="top" secondItem="f0o-F1-Hmg" secondAttribute="top" constant="20" id="6im-6b-rvM"/>
+                            <constraint firstItem="O0e-yb-ATv" firstAttribute="leading" secondItem="f0o-F1-Hmg" secondAttribute="leading" constant="20" id="9vS-Ni-5Av"/>
                             <constraint firstItem="S9p-d8-xzV" firstAttribute="trailing" secondItem="f0o-F1-Hmg" secondAttribute="trailing" id="Ct4-4q-CKM"/>
                             <constraint firstItem="S9p-d8-xzV" firstAttribute="leading" secondItem="f0o-F1-Hmg" secondAttribute="leading" id="Ou9-FS-OIj"/>
                             <constraint firstAttribute="bottom" secondItem="S9p-d8-xzV" secondAttribute="bottom" id="eiG-mu-AQs"/>
@@ -99,6 +115,7 @@ Why else do you think humans keep wearing masks? A pandemic? No, it’s to hide 
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="dismissButton" destination="O0e-yb-ATv" id="ui4-5H-A3e"/>
                         <outlet property="previewView" destination="S9p-d8-xzV" id="Rfo-hT-gMQ"/>
                     </connections>
                 </viewController>
@@ -109,8 +126,12 @@ Why else do you think humans keep wearing masks? A pandemic? No, it’s to hide 
     </scenes>
     <color key="tintColor" name="AccentColor"/>
     <resources>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="AccentColor">
             <color red="1" green="0.72500002384185791" blue="0.19599999487400055" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Button Background">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
