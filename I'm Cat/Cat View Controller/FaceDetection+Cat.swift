@@ -257,12 +257,10 @@ extension CatsViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         
         
         overlayLayer.addSublayer(faceRectangleShapeLayer)
-//        faceRectangleShapeLayer.addSublayer(textLayer)
         rootLayer.addSublayer(overlayLayer)
         
         self.detectionOverlayLayer = overlayLayer
         self.detectedFaceRectangleShapeLayer = faceRectangleShapeLayer
-//        self.detectedTextLayer = textLayer
         
         self.updateLayerGeometry()
     }
