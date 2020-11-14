@@ -7,41 +7,82 @@
 
 import UIKit
 import AVFoundation
+import CoreML
+import Vision
 
 class CatsViewController: UIViewController {
     
     @IBOutlet weak var previewView: UIView!
+    @IBOutlet weak var dismissButton: UIButton!
     
-    var captureSession: AVCaptureSession?
-    var videoPreviewLayer: AVCaptureVideoPreviewLayer?
+    // AVCapture variables to hold sequence data
+    var session: AVCaptureSession?
+    var previewLayer: AVCaptureVideoPreviewLayer?
+    
+    var videoDataOutput: AVCaptureVideoDataOutput?
+    var videoDataOutputQueue: DispatchQueue?
+    
+    var captureDevice: AVCaptureDevice?
+    var captureDeviceResolution: CGSize = CGSize()
+    
+    // Layer UI for drawing Vision results
+    var rootLayer: CALayer?
+    var detectionOverlayLayer: CALayer?
+    var detectedFaceRectangleShapeLayer: CAShapeLayer?
+    var detectedTextLayer: CATextLayer?
+    
+    // Vision requests
+    var detectionRequests: [VNDetectFaceRectanglesRequest]?
+    var trackingRequests: [VNTrackObjectRequest]?
+    
+    lazy var sequenceRequestHandler = VNSequenceRequestHandler()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        let captureDevice = AVCaptureDevice.default(for: .video)!
+        self.session = self.setupAVCaptureSession()
         
-        do {
-            let input = try AVCaptureDeviceInput(device: captureDevice)
-            
-            captureSession = AVCaptureSession()
-            captureSession?.addInput(input)
-            
-            videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
-            videoPreviewLayer?.videoGravity = .resizeAspectFill
-            videoPreviewLayer?.frame = UIScreen.main.bounds
-            
-            previewView.layer.addSublayer(videoPreviewLayer!)
-            
-            captureSession?.startRunning()
-            
-        } catch {
-            print(error)
-        }
+        self.prepareVisionRequest()
+        
+        self.session?.startRunning()
+        
+        dismissButton.layer.cornerRadius = 10
+    
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+    }
 
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    @IBAction func dismissButtonClicked(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func flipCameraButtonClicked(_ sender: Any) {
+        guard let session = session else { return }
+        session.beginConfiguration()
+        let sessionInfo = try! configureCamera(for: session, position: captureDevice?.position == .front ? .back : .front)
+        
+        captureDevice = sessionInfo.device
+        captureDeviceResolution = sessionInfo.resolution
+
+        detectedFaceRectangleShapeLayer?.path = .none
+        setupVisionDrawingLayers()
+        
+        session.commitConfiguration()
+    }
+    
     /*
     // MARK: - Navigation
 
