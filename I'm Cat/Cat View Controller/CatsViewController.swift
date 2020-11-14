@@ -29,6 +29,7 @@ class CatsViewController: UIViewController {
     var rootLayer: CALayer?
     var detectionOverlayLayer: CALayer?
     var detectedFaceRectangleShapeLayer: CAShapeLayer?
+    var detectedTextLayer: CATextLayer?
     
     // Vision requests
     var detectionRequests: [VNDetectFaceRectanglesRequest]?
@@ -76,6 +77,7 @@ class CatsViewController: UIViewController {
         captureDevice = sessionInfo.device
         captureDeviceResolution = sessionInfo.resolution
 
+        detectedFaceRectangleShapeLayer?.path = .none
         setupVisionDrawingLayers()
         
         session.commitConfiguration()

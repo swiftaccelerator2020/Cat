@@ -251,17 +251,18 @@ extension CatsViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         faceRectangleShapeLayer.bounds = captureDeviceBounds
         faceRectangleShapeLayer.anchorPoint = normalizedCenterPoint
         faceRectangleShapeLayer.position = captureDeviceBoundsCenterPoint
-        faceRectangleShapeLayer.fillColor = nil
+        faceRectangleShapeLayer.fillColor = UIColor.blue.cgColor
         faceRectangleShapeLayer.strokeColor = UIColor.green.withAlphaComponent(0.7).cgColor
         faceRectangleShapeLayer.lineWidth = 5
-        faceRectangleShapeLayer.shadowOpacity = 0.7
-        faceRectangleShapeLayer.shadowRadius = 5
+        
         
         overlayLayer.addSublayer(faceRectangleShapeLayer)
+//        faceRectangleShapeLayer.addSublayer(textLayer)
         rootLayer.addSublayer(overlayLayer)
         
         self.detectionOverlayLayer = overlayLayer
         self.detectedFaceRectangleShapeLayer = faceRectangleShapeLayer
+//        self.detectedTextLayer = textLayer
         
         self.updateLayerGeometry()
     }
@@ -368,7 +369,7 @@ extension CatsViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     /// - Tag: DrawPaths
     func drawFaceObservations(_ faceObservations: [VNFaceObservation]) {
         guard let faceRectangleShapeLayer = self.detectedFaceRectangleShapeLayer
-            else {
+        else {
             return
         }
         
@@ -383,9 +384,12 @@ extension CatsViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
             self.addIndicators(to: faceRectanglePath,
                                faceLandmarksPath: faceLandmarksPath,
                                for: faceObservation)
+            
         }
         
         faceRectangleShapeLayer.path = faceRectanglePath
+        
+        print(faceRectanglePath)
         
         self.updateLayerGeometry()
         
