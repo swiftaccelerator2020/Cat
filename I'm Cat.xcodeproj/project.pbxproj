@@ -19,6 +19,10 @@
 		3261AB47255CF4FF007DBC59 /* FaceDetection+Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3261AB46255CF4FF007DBC59 /* FaceDetection+Cat.swift */; };
 		3261AB4A255CF64F007DBC59 /* UIImage+Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3261AB49255CF64F007DBC59 /* UIImage+Orientation.swift */; };
 		32A2005E255FBE9F0083B08A /* Reactions 2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 32A2005D255FBE9F0083B08A /* Reactions 2.mlmodel */; };
+		32DD9BA425603B6000BD9155 /* CatClassification+Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD9BA325603B6000BD9155 /* CatClassification+Cat.swift */; };
+		32DD9BA8256104EC00BD9155 /* PostProcessing+Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD9BA7256104EC00BD9155 /* PostProcessing+Cat.swift */; };
+		32DD9BAB2561548000BD9155 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD9BAA2561548000BD9155 /* PreviewViewController.swift */; };
+		32E50C5D256959270049D116 /* Degrees+CGAffineTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E50C5C256959270049D116 /* Degrees+CGAffineTransform.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		3261AB46255CF4FF007DBC59 /* FaceDetection+Cat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FaceDetection+Cat.swift"; sourceTree = "<group>"; };
 		3261AB49255CF64F007DBC59 /* UIImage+Orientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Orientation.swift"; sourceTree = "<group>"; };
 		32A2005D255FBE9F0083B08A /* Reactions 2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "Reactions 2.mlmodel"; sourceTree = "<group>"; };
+		32DD9BA325603B6000BD9155 /* CatClassification+Cat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CatClassification+Cat.swift"; sourceTree = "<group>"; };
+		32DD9BA7256104EC00BD9155 /* PostProcessing+Cat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostProcessing+Cat.swift"; sourceTree = "<group>"; };
+		32DD9BAA2561548000BD9155 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
+		32E50C5C256959270049D116 /* Degrees+CGAffineTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Degrees+CGAffineTransform.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,8 +78,8 @@
 			children = (
 				324A89EB2553D0D90001F8A2 /* AppDelegate.swift */,
 				324A89ED2553D0D90001F8A2 /* SceneDelegate.swift */,
-				324A8A002553D64B0001F8A2 /* CustomColor+UIColor.swift */,
-				3261AB49255CF64F007DBC59 /* UIImage+Orientation.swift */,
+				32E50C5F25695E320049D116 /* Support Files */,
+				32DD9BAA2561548000BD9155 /* PreviewViewController.swift */,
 				3261AB41255CEF46007DBC59 /* Cat View Controller */,
 				324A8A03255529F60001F8A2 /* Home View Controller */,
 				324A89F12553D0D90001F8A2 /* Main.storyboard */,
@@ -97,8 +105,20 @@
 			children = (
 				3261AB39255C381C007DBC59 /* CatsViewController.swift */,
 				3261AB46255CF4FF007DBC59 /* FaceDetection+Cat.swift */,
+				32DD9BA325603B6000BD9155 /* CatClassification+Cat.swift */,
+				32DD9BA7256104EC00BD9155 /* PostProcessing+Cat.swift */,
 			);
 			path = "Cat View Controller";
+			sourceTree = "<group>";
+		};
+		32E50C5F25695E320049D116 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				324A8A002553D64B0001F8A2 /* CustomColor+UIColor.swift */,
+				3261AB49255CF64F007DBC59 /* UIImage+Orientation.swift */,
+				32E50C5C256959270049D116 /* Degrees+CGAffineTransform.swift */,
+			);
+			path = "Support Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,10 +196,14 @@
 				324A89EC2553D0D90001F8A2 /* AppDelegate.swift in Sources */,
 				3261AB3A255C381C007DBC59 /* CatsViewController.swift in Sources */,
 				3261AB4A255CF64F007DBC59 /* UIImage+Orientation.swift in Sources */,
+				32DD9BA8256104EC00BD9155 /* PostProcessing+Cat.swift in Sources */,
+				32E50C5D256959270049D116 /* Degrees+CGAffineTransform.swift in Sources */,
 				3261AB47255CF4FF007DBC59 /* FaceDetection+Cat.swift in Sources */,
 				324A8A012553D64B0001F8A2 /* CustomColor+UIColor.swift in Sources */,
 				324A89EE2553D0D90001F8A2 /* SceneDelegate.swift in Sources */,
 				32A2005E255FBE9F0083B08A /* Reactions 2.mlmodel in Sources */,
+				32DD9BA425603B6000BD9155 /* CatClassification+Cat.swift in Sources */,
+				32DD9BAB2561548000BD9155 /* PreviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

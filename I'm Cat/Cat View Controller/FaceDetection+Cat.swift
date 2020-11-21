@@ -19,9 +19,19 @@ extension CatsViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         let captureSession = AVCaptureSession()
         do {
             let inputDevice = try self.configureCamera(for: captureSession)
+            
             self.configureVideoDataOutput(for: inputDevice.device, resolution: inputDevice.resolution, captureSession: captureSession)
+            
             self.designatePreviewLayer(for: captureSession)
+            
+            captureImageOutput = AVCapturePhotoOutput()
+            
+            if captureSession.canAddOutput(captureImageOutput!) {
+                captureSession.addOutput(captureImageOutput!)
+            }
+            
             return captureSession
+            
         } catch let executionError as NSError {
             self.presentError(executionError)
         } catch {
@@ -387,7 +397,7 @@ extension CatsViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         
         faceRectangleShapeLayer.path = faceRectanglePath
         
-        print(faceRectanglePath)
+        print(faceRectanglePath.boundingBox)
         
         self.updateLayerGeometry()
         
@@ -398,6 +408,8 @@ extension CatsViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     /// - Tag: PerformRequests
     // Handle delegate method callback on receiving a sample buffer.
     public func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        
+        if imageCaptured { return }
         
         var requestHandlerOptions: [VNImageOption: AnyObject] = [:]
         
