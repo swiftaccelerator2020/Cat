@@ -22,7 +22,7 @@ class PreviewViewController: UIViewController {
     
     lazy var classificationRequest: VNCoreMLRequest = {
         do {
-            let model = try VNCoreMLModel(for: Reactions_2(configuration: .init()).model)
+            let model = try VNCoreMLModel(for: Reactions_3(configuration: .init()).model)
             
             let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
                 self?.processClassifications(for: request, error: error)
@@ -143,11 +143,25 @@ class PreviewViewController: UIViewController {
             if classifications.isEmpty {
                 print("Nothing recognized.")
             } else {
+                let 😾😼🙀😸😺😿 = [
+                    "anger"     : "😾",
+                    "contempt"  : "😼",
+                    "disgust"   : "😾",
+                    "fear"      : "🙀",
+                    "happiness" : "😸",
+                    "neutral"   : "🐱",
+                    "sadness"   : "😿",
+                    "surprise"  : "🙀",
+                    "not cat"   : "👻"
+                ]
+                
                 // Display top classifications ranked by confidence in the UI.
-                let descriptions = classifications.map { classification in
+                let descriptions = classifications.map { classification -> String in
                     // Formats the classification for display; e.g. "(0.37) cliff, drop, drop-off".
                     
-                    return String(format: "  (%.2f) %@", classification.confidence, classification.identifier)
+                    let emoji = 😾😼🙀😸😺😿[classification.identifier] ?? "👻"
+                    
+                    return String(format: "  %.4f%@", classification.confidence * 100, "% " + emoji)
                 }
                 
                 let alert = UIAlertController(title: "classification results", message: descriptions.joined(separator: "\n"), preferredStyle: .alert)

@@ -51,7 +51,7 @@ class CatsViewController: UIViewController {
     
     lazy var classificationRequest: VNCoreMLRequest = {
         do {
-            let model = try VNCoreMLModel(for: Reactions_2(configuration: .init()).model)
+            let model = try VNCoreMLModel(for: Reactions_3(configuration: .init()).model)
             
             let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
                 self?.processClassifications(for: request, error: error)
